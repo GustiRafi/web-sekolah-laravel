@@ -6,6 +6,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use \App\Models\User;
 use \App\Models\berita;
+use \App\Models\sambutan;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
@@ -26,6 +27,14 @@ class DatabaseSeeder extends Seeder
             'email_verified_at' => now(),
             'password' => Hash::make('password'),
             'remember_token' => Str::random(10),
+        ]);
+
+        sambutan::create([
+            'title' => 'Sambutan Kepala Sekolah',
+            'slug' => 'sambutan-kepala-sekolah',
+            'image' => 'berita/sambutan.jpeg',
+            'excerp' => 'isdhfiusahdcsdadaasdwsgdjh',
+            'description' => 'ajughsinfshiegjaioueydjisjjjsisjsfsdsnsdjsnsujfsnijsnsjdisiisisiisiiwisabrksdiwjjsabrieuwewhdc'
         ]);
 
         // \App\Models\User::factory()->create([

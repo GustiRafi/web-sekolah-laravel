@@ -1,3 +1,4 @@
+@can('admin')
 @extends('layouts.admin')
 @section('admin-page')
 <div class="body px-3">
@@ -9,3 +10,4 @@
 </div>
 </div>
 @endsection
+@endcan

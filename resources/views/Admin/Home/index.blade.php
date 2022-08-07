@@ -1,3 +1,4 @@
+@can('admin')
 @extends('layouts.admin')
 @section('admin-page')
 <div class="body flex-grow-1 px-3">
@@ -132,3 +133,4 @@
 </div>
 </div>
 @endsection
+@endcan
