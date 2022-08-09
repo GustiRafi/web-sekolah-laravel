@@ -12,7 +12,12 @@ use App\Http\Controllers\DashboardGoalController;
 use App\Http\Controllers\DashboardSejarahController;
 use App\Http\Controllers\DashboardPerpusController;
 use App\Http\Controllers\DashboardTestiController;
-
+use App\Http\Controllers\DashboardLowkerConteroller;
+use App\Http\Controllers\DashboardDudikaController;
+use App\Http\Controllers\DashboardGuruController;
+use App\Http\Controllers\DashboardSiswaController;
+use App\Http\Controllers\DashboardContactController;
+use App\Http\Controllers\DashbaordPpdbController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -79,3 +84,12 @@ Route::resource('/dashboard/visimisi',DashboardGoalController::class)->except('c
 Route::resource('/dashboard/sejarah',DashboardSejarahController::class)->except('create','store','destroy')->middleware('IsAdmin');
 Route::resource('/dashboard/perpus',DashboardPerpusController::class)->except('create','store','destroy')->middleware('IsAdmin');
 Route::resource('/dashboard/testimoni', DashboardTestiController::class)->middleware('IsAdmin');
+
+Route::resource('/dashboard/lowongan', DashboardLowkerConteroller::class)->middleware('IsAdmin');
+Route::resource('/dashboard/dudika', DashboardDudikaController::class)->except('show')->middleware('IsAdmin');
+Route::resource('/dashboard/vidio', DashboardVidioController::class)->except('show')->middleware('IsAdmin');
+
+Route::resource('/dashboard/guru', DashboardGuruController::class)->except('show')->middleware('IsAdmin');
+Route::resource('/dashboard/Siswa', DashboardSiswaController::class)->except('show')->middleware('IsAdmin');
+Route::resource('/dashboard/contact', DashboardContactController::class)->except('show','create')->middleware('IsAdmin');
+Route::resource('/dashboard/ppdb', DashbaordPpdbController::class)->except('show','create','store','destroy')->middleware('IsAdmin');

@@ -13,13 +13,22 @@
             <a class="nav-link" href="/dashboard/sambutan">Sambutan Kepala sekolah</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="">Guru</a>
+            <a class="nav-link" href="/dashboard/contact">Kontak</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="">siswa</a>
+            <a class="nav-link" href="/dashboard/guru">Guru</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/dashboard/Siswa">siswa</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="/dashboard/jurusan">Jurusan</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/dashboard/lowongan">lowongan</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/dashboard/dudika">Daftar Dudika</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="/dashboard/perpus">Perpustakaan</a>
@@ -34,7 +43,13 @@
             <a class="nav-link" href="/dashboard/galery">Galery</a>
         </li>
         <li class="nav-item">
+            <a class="nav-link" href="/dashboard/vidio">Vidio</a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link" href="/dashboard/testimoni">Testimoni</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/dashboard/ppdb">ppdb</a>
         </li>
     </ul>
     <button class="sidebar-toggler" type="button" data-coreui-toggle="unfoldable"></button>

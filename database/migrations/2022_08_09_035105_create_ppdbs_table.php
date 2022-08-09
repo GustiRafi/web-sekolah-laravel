@@ -13,12 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('students', function (Blueprint $table) {
+        Schema::create('ppdbs', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->foreignId('jurusan_id')->references('id')->on('jurusans')->cascadeOnDelete();
+            $table->string('excrept');
             $table->string('image');
-            $table->string('gender');
+            $table->text('body');
             $table->timestamps();
         });
     }
@@ -30,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('students');
+        Schema::dropIfExists('ppdbs');
     }
 };
