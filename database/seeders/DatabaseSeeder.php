@@ -110,7 +110,7 @@ class DatabaseSeeder extends Seeder
             'body' => 'jdhushdjskkjosjskshsho'
         ]);
 
-        student::factory(257)->create();
+        student::factory(500)->create();
         teacher::factory(80)->create();
         
         // \App\Models\User::factory()->create([

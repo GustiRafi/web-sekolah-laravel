@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->foreignId('jurusan_id')->references('id')->on('jurusans')->cascadeOnDelete();
+            $table->string('kelas');
             $table->string('image');
             $table->string('gender');
             $table->timestamps();

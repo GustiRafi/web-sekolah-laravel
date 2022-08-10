@@ -25,10 +25,33 @@
         <tr>
             <th>No</th>
             <th>name</th>
+            <th>image</th>
             <th>gender</th>
             <th>action</th>
         </tr>
+        @foreach($siswas as $siswa)
+        <tr>
+            <td>{{ $loop->iteration }}</td>
+            <td>{{ $siswa->name }}</td>
+            <td><img src="{{ asset('storage/' . $siswa->image) }}" alt="" srcset=""></td>
+            <td>{{ $siswa->gender }}</td>
+            <td>
+                <a href="/dashboard/Siswa/{{ $siswa->id }}/edit"
+                    class="badge bg-success text-decoration-none text-white"><i class="bi bi-pen">edit</i></a>
+                <form action="/dashboard/siswa/destroy" method="post" class="d-inline">
+                    @method('delete')
+                    @csrf
+                    <input type="text" name="oldimage" id="oldimage" value="{{ $siswa->image }}" hidden>
+                    <input type="text" name="id" id="id" value="{{ $siswa->id }}" hidden>
+                    <button type="submit" class="badge bg-danger border-0"
+                        onclick="return confirm('Are you sure delete this data?')"><i
+                            class="bi bi-trash">delete</i></button>
+                </form>
+            </td>
+        </tr>
+        @endforeach
     </table>
+    {{ $siswas->links() }}
 </div>
 </div>
 @endsection

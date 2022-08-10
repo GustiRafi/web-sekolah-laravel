@@ -19,6 +19,7 @@ class StudentFactory extends Factory
         return [
             'name' => fake()->name(),
             'jurusan_id' => fake()->randomElement([1,2,3,4,5,6,7]),
+            'kelas' => fake()->randomElement(['X','XI','X11']),
             'image' => 'siswa/anonime.jpeg',
             'gender' => fake()->randomElement(['Laki-Laki', 'Perempuan']),
         ];

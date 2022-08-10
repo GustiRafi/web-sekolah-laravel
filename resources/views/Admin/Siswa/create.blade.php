@@ -18,12 +18,22 @@
         <select name="jurusan_id" id="jurusan_id" class="form-select">
             @foreach($jurusans as $jurusan)
             @if(old('jurusan_id') == $jurusan->id)
-            <option value="$jurusan->id" selected>$jurusan->jurusan_name</option>
+            <option value="{{ $jurusan->id }}" selected>{{ $jurusan->jurusan_name }}</option>
             @else
-            <option value="$jurusan->id">$jurusan->jurusan_name</option>
+            <option value="{{ $jurusan->id }}">{{ $jurusan->jurusan_name }}</option>
             @endif
             @endforeach
         </select>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control @error('kelas')is-invalid @enderror" id="kelas" name="kelas"
+                placeholder="kelas" value="{{ old('kelas') }}" required>
+            <label for="kelas">kelas</label>
+            @error('kelas')
+            <div class="invalid-feedback">
+                {{ $message }}
+            </div>
+            @enderror
+        </div>
         <div class="mb-3">
             <label for="image" class="form-label">Foto</label>
             <img class="d-block img-preview img-fluid mb-3 col-sm-5" id="output">
@@ -35,10 +45,12 @@
             </div>
             @enderror
         </div>
-        <select name="gender" id="gender" class="form-select">
+        <select name=" gender" id="gender" class="form-select">
             @if(old('gender') == 'Laki-Laki')
             <option value="Laki-laki" selected>Laki-Laki</option>
+            <option value="Perempuan">Perempuan</option>
             @elseif(old('gender') == 'Perempuan')
+            <option value="Laki-laki">Laki-Laki</option>
             <option value="Perempuan" selected>Perempuan</option>
             @else
             <option value="Laki-laki">Laki-Laki</option>

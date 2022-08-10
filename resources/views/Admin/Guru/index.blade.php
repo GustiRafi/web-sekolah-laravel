@@ -14,6 +14,7 @@
         <tr>
             <th>No</th>
             <th>name</th>
+            <th>image</th>
             <th>gender</th>
             <th>action</th>
         </tr>
@@ -21,10 +22,9 @@
         <tr>
             <td>{{ $loop->iteration }}</td>
             <td>{{ $guru->name }}</td>
+            <td><img src="{{ asset('storage/' . $guru->image) }}" alt="" srcset=""></td>
             <td>{{ $guru->gender }}</td>
             <td>
-                <a href="/dashboard/guru/{{ $guru->id }}" class="badge bg-primary text-decoration-none text-white"><i
-                        class="bi bi-eye-fill">view</i></a>
                 <a href="/dashboard/guru/{{ $guru->id }}/edit"
                     class="badge bg-success text-decoration-none text-white"><i class="bi bi-pen">edit</i></a>
                 <form action="/dashboard/guru/destroy" method="post" class="d-inline">

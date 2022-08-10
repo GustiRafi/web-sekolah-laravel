@@ -18,7 +18,7 @@ class DashboardSiswaController extends Controller
     {
         return view('Admin.Siswa.index',[
             'title' => 'Daftar Siswa',
-            'siswas'=> student::latest()->search(request(['search']))->get()
+            'siswas'=> student::search(request(['search']))->paginate(10)
         ]);
     }
 
@@ -46,6 +46,7 @@ class DashboardSiswaController extends Controller
         $validate = $request->validate([
             'name' => ['required','max:255'],
             'jurusan_id' => ['required'],
+            'kelas' => ['required','max:255'],
             'image' => 'required|image|max:1024',
             'gender' => ['required','max:255']
         ]);
@@ -77,7 +78,8 @@ class DashboardSiswaController extends Controller
     {
         return view('Admin.Siswa.edit',[
             'title' => 'Edit Data',
-            'siswa' => student::find($id)
+            'siswa' => student::find($id),
+            'jurusans' => jurusan::all()
         ]);
     }
 
@@ -93,6 +95,7 @@ class DashboardSiswaController extends Controller
         $rules = [
             'name' => ['required','max:255'],
             'jurusan_id' => ['required'],
+            'kelas' => ['required','max:255'],
             'gender' => ['required','max:255']
         ];
 

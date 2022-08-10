@@ -21,7 +21,7 @@ class student extends Model
     {
         if(isset($search['search'] ) ? $search['search'] : false)
         {
-            return $query->where('jurusan_name', 'like', '%'. $search['search'] .'%');
+            return $query->leftJoin('jurusans', 'students.jurusan_id', '=', 'jurusans.id')->where('jurusan_name', 'like', '%'. $search['search'] .'%');
         }
     }
 }
