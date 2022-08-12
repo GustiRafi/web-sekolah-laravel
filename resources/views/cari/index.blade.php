@@ -8,6 +8,8 @@
             <div data-aos="fade-right">
                 <h4>Berita </h4>
             </div>
+            <p><strong> Search result for : {{ request('search') }} </strong></p>
+            @if(count($beritas))
             @foreach($beritas as $berita)
             <div data-aos="fade-right">
                 <div class="card mb-3">
@@ -33,31 +35,11 @@
                 </div>
             </div>
             @endforeach
-            <div class="row row-cols-1 row-cols-md-2 g-4 my-3">
-                <div class="col-12 col-md-7 ">
-                    <div data-aos="zoom-in">
-                        <div class="card  ps-3 py-3 px-2 rounded-3 shadow-sm"
-                            style="background-color:  rgb(212, 207, 207);">
-                            @foreach($vidios as $vidio)
-                            <h4>{{ $vidio->title }}</h4>
-                            {!! $vidio->src !!}
-                            @endforeach
-                        </div>
-                    </div>
-                </div>
-                <div class="col col-12 col-md-5 ">
-                    <div data-aos="zoom-in">
-                        <div class="card px-3 py-3 rounded-3 shadow-sm" style="background-color:  rgb(212, 207, 207);">
-                            <h4>Info PPDB</h4>
-                            @foreach($ppdbs as $ppdb)
-                            <img src="{{ asset('storage/' . $ppdb->image) }}" alt="" srcset="">
-                            <p class="pt-3">{{ $ppdb->excrept }}</p>
-                            <a href="/ppdb/detail/" class="btn btn-primary">Detail</a>
-                            @endforeach
-                        </div>
-                    </div>
-                </div>
+            @else
+            <div class="text-center">
+                <p>no item found</p>
             </div>
+            @endif
         </div>
     </div>
 </div>

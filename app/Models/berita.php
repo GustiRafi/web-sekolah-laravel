@@ -12,10 +12,15 @@ class berita extends Model
     use Sluggable;
 
     protected $guarded = ['id'];
+    protected $with = ['user'];
 
     public function User()
     {
         return $this->belongsTo(User::class);
+    }
+    public function comment()
+    {
+        return $this->hasMany(comment::class);
     }
 
     public function sluggable(): array
@@ -30,5 +35,14 @@ class berita extends Model
     public function getRouteKeyName()
     {
         return 'slug';
+    }
+
+    public function scopeSearch($query, array $search)
+    {
+        if(isset($search['search'] ) ? $search['search'] : false)
+        {
+            return $query->where('title', 'like', '%'. $search['search'] .'%')
+                        ->orWhere('description','like', '%'. $search['search'] .'%' );
+        }
     }
 }

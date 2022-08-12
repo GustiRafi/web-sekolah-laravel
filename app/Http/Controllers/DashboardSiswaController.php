@@ -18,7 +18,7 @@ class DashboardSiswaController extends Controller
     {
         return view('Admin.Siswa.index',[
             'title' => 'Daftar Siswa',
-            'siswas'=> student::search(request(['search']))->paginate(10)
+            'siswas'=> student::search(request(['search']))->paginate(10)->withQueryString()
         ]);
     }
 

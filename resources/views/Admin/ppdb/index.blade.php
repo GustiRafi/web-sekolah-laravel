@@ -10,7 +10,7 @@
     @endif
 
     @foreach($ppdbs as $ppdb)
-    <img src="{{ asset('storage/' . $ppdb->image) }}" alt="$ppdb->image" srcset="">
+    <img src="{{ asset('storage/' . $ppdb->image) }}" alt="{{ $ppdb->image }}" srcset="">
 
     <a href="/dashboard/ppdb/{{ $ppdb->id }}/edit" class="badge bg-success text-decoration-none text-white"><i
             class="bi bi-pen">edit</i></a>

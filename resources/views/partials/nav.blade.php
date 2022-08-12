@@ -1,15 +1,15 @@
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm" id="nav">
+<nav class="navbar navbar-expand-lg navbar-light bg-info sticky-top shadow-sm" id="nav">
     <div class="container">
         <div class="col d-flex">
-            <img src="img/logo.png" width="70px" height="70px" alt="logo smk 1 Bantul" srcset="">
+            <img src="/img/logo.png" width="70px" height="70px" alt="logo smk 1 Bantul" srcset="">
             <h2 class="ps-3 "><strong>SMK NEGERI 1 BANTUL</strong></h2>
         </div>
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
             aria-expanded="false aria-controls" id="tgl" offcanvasExample">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="offcanvas offcanvas-start bg-white text-white" tabindex="-1" aria-labelledby="offcanvasExampleLabel"
+        <div class="offcanvas offcanvas-start bg-info text-white" tabindex="-1" aria-labelledby="offcanvasExampleLabel"
             id="offcanvasExample">
             <div class="offcanvas-header">
                 <h5 class="offcanvas-title" id="offcanvasExampleLabel">SMK N 1 BANTUL</h5>

@@ -11,19 +11,16 @@
                     <th>Nama</th>
                     <th>Jenis Kelamin</th>
                 </tr>
-                <?php for($i=1; $i <= 10;){ ?>
+                @foreach($teachers as $guru)
                 <tr>
-                    <td><?= $i ?></td>
-                    <td><img src="img/guru.jpg" alt="guru" srcset=""></td>
-                    <td>Budi Purnomo</td>
-                    <td>Laki-Laki</td>
+                    <td>{{ $loop->iteration }}</td>
+                    <td><img src="{{ asset('storage/' . $guru->image) }}" class="d-block img-fluid mb-3 col-sm-5"></td>
+                    <td>{{ $guru->name }}</td>
+                    <td>{{ $guru->gender }}</td>
                 </tr>
-                <?php $i++ ?>
-                <?php }?>
+                @endforeach
             </table>
-            <div class="text-center my-3">
-                <button class="btn btn-info rounded-3">Lihat Selengkapnya</button>
-            </div>
+            {{ $teachers->links() }}
         </div>
     </div>
 </div>

@@ -4,7 +4,7 @@
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <div class="card  text-white">
-                    <img src="img/smk.jpg" class="card-img" alt="...">
+                    <img src="/img/smk.jpg" class="card-img" alt="...">
                     <div class="card-img-overlay">
                         <h1 class="card-title  text-center py-5"><strong>SELAMAT DATANG!!</strong></h1>
                     </div>
@@ -12,7 +12,7 @@
             </div>
             <div class="carousel-item">
                 <div class="card  text-white">
-                    <img src="img/smk.jpg" class="card-img" alt="...">
+                    <img src="/img/smk.jpg" class="card-img" alt="...">
                     <div class="card-img-overlay">
                         <h1 class="card-title text-center py-5"><strong>SELAMAT DATANG!!</strong></h1>
                     </div>
@@ -20,7 +20,7 @@
             </div>
             <div class="carousel-item">
                 <div class="card  text-white">
-                    <img src="img/smk.jpg" class="card-img" alt="...">
+                    <img src="/img/smk.jpg" class="card-img" alt="...">
                     <div class="card-img-overlay">
                         <h1 class="card-title text-center py-5"><strong>SELAMAT DATANG!!</strong></h1>
                     </div>
@@ -57,7 +57,8 @@
                             <div class="card bg-info text-white text-center shadow">
                                 <h3 class="pt-3"><i class="bi bi-book-half "></i></h3>
                                 <h3>Akademi</h3>
-                                <p class="pb-2">SMK N 1 Bantul meiliki 8 bidang kehalian yang sangat unggul</p>
+                                <p class="pb-2">SMK N 1 Bantul meiliki {{ $jurusans->count() }} bidang kehalian yang
+                                    sangat unggul</p>
                                 <p></p>
                             </div>
                         </div>

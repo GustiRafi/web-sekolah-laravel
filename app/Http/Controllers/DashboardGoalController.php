@@ -80,7 +80,7 @@ class DashboardGoalController extends Controller
     {
         $validate =$request->validate([
             'title' => ['required','max:255'],
-            'body' => ['required','max:255'],
+            'body' => ['required'],
         ]);
 
         goal::where('id', $id)->update($validate);

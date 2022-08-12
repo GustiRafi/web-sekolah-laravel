@@ -83,9 +83,9 @@ class DashbaordPpdbController extends Controller
         ]);
 
             $validate['image'] = $request->file('image')->store('ppdb');
-            ppdb::create($validate);
+            ppdb::where('id',$id)->update($validate);
 
-        return redirect('/dashboard/ppdb')->with('success', 'New post has been added');
+        return redirect('/dashboard/ppdb')->with('success', 'post has been updated');
     }
 
     /**

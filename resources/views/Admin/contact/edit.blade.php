@@ -18,10 +18,10 @@
             @enderror
         </div>
         <div class="form-floating mb-3">
-            <input type="email" class="form-control @error('alamat')is-invalid @enderror" id="alamat" name="alamat"
-                placeholder="alamat" value="{{ old('alamat', $contact->alamat) }}" required>
-            <label for="alamat">alamat</label>
-            @error('alamat')
+            <input type="email" class="form-control @error('email')is-invalid @enderror" id="email" name="email"
+                placeholder="email" value="{{ old('email', $contact->email) }}" required>
+            <label for="email">email</label>
+            @error('email')
             <div class="invalid-feedback">
                 {{ $message }}
             </div>
@@ -47,9 +47,8 @@
             </div>
             @enderror
         </div>
-</div>
-<button type="submit" class="btn btn-primary mt-3">Update Post</button>
-</form>
+        <button type="submit" class="btn btn-primary mt-3">Update Post</button>
+    </form>
 </div>
 </div>
 @endsection

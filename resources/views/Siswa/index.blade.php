@@ -7,17 +7,19 @@
             <div class="my-3">
                 <div class="row ">
                     <div class="col-12 col-md-6">
-                        <form action="" class="d-flex justify-content-center" method="post">
-                            <select name="" id="" class="form-select" aria-label="Default select example">
-                                <option value="">XIRPL2</option>
-                                <option value="">XIRPL2</option>
-                                <option value="">XIRPL2</option>
-                                <option value="">XIRPL2</option>
-                                <option value="">XIRPL2</option>
-                                <option value="">XIRPL2</option>
-                                <option value="">XIRPL2</option>
+                        <form action="/Siswa" class="d-flex ">
+                            <select name="search" class="form-select" id="search">
+                                <option value="">--Pilih Jurusan--</option>
+                                @foreach($jurusans as $jurusan)
+                                @if( request('search') == $jurusan->jurusan_name )
+                                <option value="{{ $jurusan->jurusan_name }}" selected>{{ $jurusan->jurusan_name }}
+                                </option>
+                                @else
+                                <option value="{{ $jurusan->jurusan_name }}">{{ $jurusan->jurusan_name }}</option>
+                                @endif
+                                @endforeach
                             </select>
-                            <button class="btn btn-info ms-3" type="submit">Cari</button>
+                            <button class="btn btn-primary" type="submit">Search</button>
                         </form>
                     </div>
                 </div>
@@ -29,39 +31,20 @@
                     <th>Nama</th>
                     <th>Jenis Kelamin</th>
                 </tr>
-                <?php for($i=1; $i <= 5;){ ?>
+                @foreach($siswas as $siswa)
                 <tr>
-                    <td><?= $i ?></td>
-                    <td><img src="img/siswa.jpg" alt="guru" srcset=""></td>
-                    <td>Indra Setiawan</td>
-                    <td>Laki-Laki</td>
+                    <td>{{ $loop->iteration }}</td>
+                    <td><img src="{{ asset('storage/' . $siswa->image) }}" class="d-block img-fluid mb-3 col-sm-5"></td>
+                    <td>{{ $siswa->name }}</td>
+                    <td>{{ $siswa->gender }}</td>
                 </tr>
-                <?php $i++ ?>
-                <?php }?>
+                @endforeach
             </table>
+            {{ $siswas->links() }}
 
 
             <div class="row row-cols-1 row-cols-md-2 g-4 my-3">
-                <div class="col-12 col-md-4">
-                    <div data-aos="fade-right">
-                        <div class="d-flex my-3 rounded-3 shadow-sm" style="background-color:  rgb(212, 207, 207);">
-                            <span class="border border-5 border-primary"></span>
-                            <h5 class="py-3 ps-3">Siswa Berprestasi</h5>
-                        </div>
-                    </div>
-                    <div data-aos="fade-right" data-aos-delay="300">
-                        <div class="d-flex my-3 rounded-3 shadow-sm" style="background-color:  rgb(212, 207, 207);">
-                            <span class="border border-5 border-primary"></span>
-                            <h5 class="py-3 ps-3">Osis</h5>
-                        </div>
-                    </div>
-                    <div data-aos="fade-right" data-aos-delay="400">
-                        <div class="d-flex my-3 rounded-3 shadow-sm" style="background-color: rgba(217, 217, 217, 1)">
-                            <span class="border border-5 border-primary"></span>
-                            <h5 class="py-3 ps-3">Rohis</h5>
-                        </div>
-                    </div>
-                </div>
+
                 <div class="col-12 col-md-8">
                     <div data-aos="fade-right" data-aos-delay="500">
                         <div class="my-3 rounded-3 shadow-sm" style="background-color:  rgb(212, 207, 207);">
@@ -77,16 +60,12 @@
                                     kerja mandiri berwirausaha.</p>
                                 <hr>
                                 <div class="d-flex">
-                                    <!-- <img src="img/alumni1.jpg" class="rounded-circle" alt="" srcset=""> -->
-                                    <p class="ps-2"><strong>Atik Fajaryani</strong><br>Mahasiswi Prodi Akuntansi
-                                        UNY
-                                        ( Peraih
-                                        peringkat 1 UN tingkat Nasional
-                                        2010/2011 (Alumni Skansaba) )
-
-                                        *Penyediaan fasilitas yang memadahi dan komitmen bapak/Ibu Guru yang
-                                        kompeten di bidangnya, membuat saya memperoleh hasil belajar yang baik
-                                    </p>
+                                    @foreach($testimonis as $testi)
+                                    <div class="ms-2">
+                                        <p class="ps-2"><strong>{{ $testi->name }}</strong></p>
+                                        {!! $testi->description !!}
+                                    </div>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>

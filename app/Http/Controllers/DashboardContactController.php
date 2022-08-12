@@ -60,7 +60,7 @@ class DashboardContactController extends Controller
      */
     public function edit($id)
     {
-        return view ('Admin.contact.index',[
+        return view ('Admin.contact.edit',[
             'title' => 'info contact',
             'contact' => contact::find($id)
         ]);
@@ -82,9 +82,9 @@ class DashboardContactController extends Controller
             'fax' => ['required','max:255'],
         ]);
 
-        contact::create($validate);
+        contact::where('id', $id)->update($validate);
 
-        return redirect('/dashboard/contact')->with('success', 'New post has been added');
+        return redirect('/dashboard/contact')->with('success', 'post has been updated');
     }
 
     /**
